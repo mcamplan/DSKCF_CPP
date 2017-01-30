@@ -116,6 +116,12 @@ make -j 8
    -h,  --help
      Displays usage information and exits.
 
+##Data Format.
+Some issue can arise with particular naming convention of your data. Please look at the example data used in this repository at data.bris
+to test the DSKCF matlab version
+
+http://dx.doi.org/10.5523/bris.16vbnj3im1ygi1sh0yd0mt4lp0
+	 
 ##Third Party Code and Dependencies
 This project depends on 
 
