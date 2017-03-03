@@ -202,20 +202,17 @@ cv::Rect_< int > rectFloor( cv::Rect_< T > rect )
 template< class T >
 cv::Rect_< int > getSubWindowRounding( cv::Rect_< T > rect )
 {
-	Size windowSize = rect.size();
-	Point windowPosition = centerPoint( rect );
+	cv::Size windowSize = rect.size();
+	cv::Point windowPosition = centerPoint( rect );
 
 	int width = static_cast<int>(windowSize.width);
 	int height = static_cast<int>(windowSize.height);
 
 	int xs = static_cast<int>(std::floor(windowPosition.x) - std::floor(width / 2.0)) + 1;
 	int ys = static_cast<int>(std::floor(windowPosition.y) - std::floor(height / 2.0)) + 1;
-	
+
 	return cv::Rect_< int >(xs, ys, width, height);
 }
-
-
-
 
 template< class T >
 cv::Size_< T > sizeRound( const cv::Size_< T > & rect )
@@ -599,7 +596,7 @@ std::vector< cv::Rect_< int > > connectedComponents( const cv::Mat_< T > & input
 {
   //Initial label set to one
   unsigned char label = 1;
-  
+
   //Fill the result image with zeros
   cv::Mat1b result = cv::Mat1b::zeros( input.rows, input.cols );
 
@@ -646,9 +643,9 @@ std::vector< cv::Rect_< int > > connectedComponents( const cv::Mat_< T > & input
 {
   //Initial label set to one
   unsigned char label = 1;
-  
+
   //Fill the result image with zeros
-  result.setTo(0); 
+  result.setTo(0);
 
   //Bounding boxes of each connected component
   std::vector< cv::Rect_< int > > boundingBoxes;
